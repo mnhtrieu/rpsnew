@@ -10,5 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 //const store = createStore(reducers)
 
-render(<Root /*store={store}*/ />, document.getElementById('root'));
+render(<Root /*store={store}*/ />
+    ,
+    document.getElementById('root'));
 registerServiceWorker();

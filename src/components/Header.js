@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom'
 import {
     Container,
-    Dropdown,
     Image,
     Menu,
     Visibility,
+    Icon
 } from 'semantic-ui-react'
 
 
@@ -37,27 +37,13 @@ class Header extends Component {
                         <Menu.Item>
                             <Image size='mini' src='./assets/images/logo.png'/>
                         </Menu.Item>
-                        <Menu.Item header>RPSonline</Menu.Item>
-                        <Menu.Item as='a'>About</Menu.Item>
+                        <Link to="/" className="item header">RPSonline</Link>
+                        <Link to="/" className="item">Home</Link>
+                        <Link to="/contact" className="item">Contact</Link>
+
 
                         <Menu.Menu position='right'>
-                            <Dropdown text='Login' pointing className='link item'>
-                                <Dropdown.Menu>
-                                    <Dropdown.Item>List Item</Dropdown.Item>
-                                    <Dropdown.Item>List Item</Dropdown.Item>
-                                    <Dropdown.Divider/>
-                                    <Dropdown.Header>Header Item</Dropdown.Header>
-                                    <Dropdown.Item>
-                                        <i className='dropdown icon'/>
-                                        <span className='text'>Submenu</span>
-                                        <Dropdown.Menu>
-                                            <Dropdown.Item>List Item</Dropdown.Item>
-                                            <Dropdown.Item>List Item</Dropdown.Item>
-                                        </Dropdown.Menu>
-                                    </Dropdown.Item>
-                                    <Dropdown.Item>List Item</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                            <Menu.Item as='a'> <Icon name='chess pawn' /> Play</Menu.Item>
                         </Menu.Menu>
                     </Container>
                 </Menu>
