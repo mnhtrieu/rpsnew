@@ -6,8 +6,7 @@ import Footer from '../components/Footer'
 
 import {
     Container,
-    Image,
-    Item
+    Image
 } from 'semantic-ui-react'
 
 
@@ -17,7 +16,7 @@ class Homepage extends Component {
         return (
             <div>
                 <Header/>
-                <Container text className="content">
+                <Container text className="content-container">
                     <h1>RPS Online</h1>
 
                     <h3>What is RPS online?</h3>
@@ -56,10 +55,10 @@ class Homepage extends Component {
 
                     <p>If you are interested in the progress of the prototype, here are a few screens:</p>
                     <p>
-                        <a href="./assets/images/movement.gif">Movement prototype</a><br/>
-                        <a href="./assets/images/team.gif">Choosing a team and a timer</a><br/>
-                        <a href="./assets/images/gamestart.gif">Setting a game</a><br/>
-                        <a href="./assets/images/chat.gif">Game chat</a><br/>
+                        <a target="_blank" href="./assets/images/movement.gif">Movement prototype</a><br/>
+                        <a target="_blank" href="./assets/images/team.gif">Choosing a team and a timer</a><br/>
+                        <a target="_blank" href="./assets/images/gamestart.gif">Setting a game</a><br/>
+                        <a target="_blank" href="./assets/images/chat.gif">Game chat</a><br/>
 
                     </p>
                     <p>However, school started and I got busy with my bachelor's thesis and forgot about the project.

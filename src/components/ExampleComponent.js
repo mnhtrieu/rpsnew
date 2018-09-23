@@ -41,4 +41,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { playerDeleteMessage, playerMessageLog },
-)(Header);
+)(Example);

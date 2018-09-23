@@ -17,7 +17,7 @@ class Contact extends Component {
         return (
             <div>
                 <Header/>
-                <Container text className="content">
+                <Container text className="content-container">
                     <h1>Contact</h1>
                     <p>The game is developed in a free time to practice and learn new technology with <a
                         href="https://github.com/minndoo">Milan Do</a>.
