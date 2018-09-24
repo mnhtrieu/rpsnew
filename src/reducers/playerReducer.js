@@ -1,14 +1,9 @@
-// export const initialState = {
-//   playerMessage: '',
-// };
+export const initialState = {
+  playerMessage: '',
+};
 
 //exportuju tuto funkci a kombinuju s ostatnimi reducery v indexu
-export default function(
-  state = {
-    playerMessage: '',
-  },
-  action,
-) {
+export default function(state = initialState, action) {
   //v tom switchi nemusis psat ty case do bloku, ale ja jsem na ne zvykli a prijde mi to prehlednejsi
   //+ mi to prijde jako min error prone code
   switch (action.type) {
