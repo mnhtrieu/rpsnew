@@ -10,15 +10,16 @@ class Example extends Component {
   render() {
     const { playerMessageLog, playerDeleteMessage, playerMessage } = this.props;
     window.addEventListener('click', () => {
-      playerDeleteMessage;
+      playerDeleteMessage();
     });
     return (
       <div>
         <div>
           <input
             type="text"
+            value={playerMessage}
             onChange={event => {
-              playerMessageLog(event.value);
+              playerMessageLog(event.target.value);
             }}
           />
         </div>
@@ -33,7 +34,7 @@ const mapStateToProps = state => {
   // vsechno co si tady namapujes se bude v komponente posilat jako props
   // pokud jsi nezapomnel, tak tady volam state.player -> pokud bych predtim poslal jen playerReducer do combineReducers
   // tak musis volat stav player jako state.playerReducer ==> cistejsi kod, vic logicky
-  return { playerMessage: state.player.playerMessageLog };
+  return { playerMessage: state.player.playerMessage };
 };
 
 // v connect je prvni argument napojeni State na Props, druhy argument jsou funkce/action/dispatch, ktery ti sam napoji ten subscribe
