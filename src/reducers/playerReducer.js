@@ -1,21 +1,23 @@
 export const initialState = {
-  playerMessage: '',
+    content: '',
 };
 
 //exportuju tuto funkci a kombinuju s ostatnimi reducery v indexu
-export default function(state = initialState, action) {
-  //v tom switchi nemusis psat ty case do bloku, ale ja jsem na ne zvykli a prijde mi to prehlednejsi
-  //+ mi to prijde jako min error prone code
-  switch (action.type) {
-    case 'PLAYER_LOG': {
-      return { ...state, playerMessage: action.payload };
+
+export default function (state = initialState, action) {
+    switch (action.type) {
+        case 'PLAYER_LOG': {
+            console.log('action:',action);
+            return {...state, content: action.payload};
+        }
+        case 'PLAYER_DELETE_MESSAGE': {
+            return {...state, content: ''};
+        }
+        case 'PLAYER_USERNAME':{
+            return {...state, content: action.payload};
+        }
+        default: {
+            return state;
+        }
     }
-    case 'PLAYER_DELETE_MESSAGE': {
-      return { ...state, playerMessage: '' };
-    }
-    // pro pripad, ze nematchne ani jeden action.type, tak musis davat porad default
-    default: {
-      return state;
-    }
-  }
 }

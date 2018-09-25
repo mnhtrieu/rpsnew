@@ -4,9 +4,9 @@ import { Segment, Container, List } from 'semantic-ui-react';
 class Footer extends Component {
   render() {
     return (
-      <Segment className="footer" vertical>
+      <Segment className="footer" inverted vertical>
         <Container textAlign="center">
-          <List horizontal divided link>
+          <List horizontal inverted divided link>
             <List.Item as="a" href="#">
               Site Map
             </List.Item>

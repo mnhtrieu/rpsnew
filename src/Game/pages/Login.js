@@ -1,40 +1,55 @@
 import React, {Component} from 'react';
-import {Redirect, Route, Switch} from 'react-router-dom';
-
-import {Icon, Button, Input} from 'semantic-ui-react';
+import {connect} from "react-redux";
+import LoginForm from "../../forms/LoginForm";
+import {Transition} from "semantic-ui-react";
+import {Redirect} from "react-router-dom";
+import {playerChangeUsername} from "../../actions/playerActions";
 
 class Login extends Component {
 
+    state = {visible: true, redirect: false};
+
+    toggleVisibility = () => this.setState({visible: !this.state.visible});
+
+    onCompleteTransition = () => {
+        this.setState({redirect: true});
+    }
+
+    renderRedirect = () => {
+        if(this.state.redirect)
+            return <Redirect to='/game/menu'/>;
+    }
+
+    submit = values => {
+        this.toggleVisibility();
+        this.props.playerChangeUsername(values.username);
+    }
+
     render() {
-
+        const {visible} = this.state;
         return (
-            <div className="page-login">
-                <div className="ui centered grid container">
-                    <div className="five wide column">
-                        <div className="ui icon default message">
-                            <Icon name="chess pawn"/>
-                            <div className="content">
-                                <div className="header">
-                                    <h1>RPSonline</h1>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="ui fluid card">
-                            <div className="content">
-                                <h3>Enter your nickname</h3>
-                                <Input iconPosition='left' placeholder='Nickname' fluid>
-                                    <Icon name='user' />
-                                    <input />
-                                </Input><br />
-                                <Button content="Next" icon="play" labelPosition="left" color="primary"/>
-
-                            </div>
-                        </div>
+            <div>
+            <Transition visible={visible} animation="fly left"
+                        onComplete={() => (this.onCompleteTransition())}>
+                <div className="page-login">
+                    <div className="ui centered grid container">
+                        <LoginForm onSubmit={this.submit}/>
                     </div>
                 </div>
+
+            </Transition>
+                {this.renderRedirect()}
             </div>
-    );
-    }
+        );
     }
 
-    export default Login;
+}
+
+const mapStateToProps = state => {
+    return {username: state.player.content};
+};
+
+export default connect(
+    mapStateToProps,
+    {playerChangeUsername},
+)(Login);
