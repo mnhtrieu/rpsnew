@@ -17,7 +17,7 @@ class Login extends Component {
 
     renderRedirect = () => {
         if(this.state.redirect)
-            return <Redirect to='/game/menu'/>;
+            return <Redirect to='/play/menu'/>;
     }
 
     submit = values => {
@@ -27,13 +27,14 @@ class Login extends Component {
 
     render() {
         const {visible} = this.state;
+        const {player} = this.props.game;
         return (
             <div>
             <Transition visible={visible} animation="fly left"
                         onComplete={() => (this.onCompleteTransition())}>
                 <div className="page-login">
                     <div className="ui centered grid container">
-                        <LoginForm onSubmit={this.submit}/>
+                        <LoginForm onSubmit={this.submit} initialValues={{username: player.getName()}} />
                     </div>
                 </div>
 

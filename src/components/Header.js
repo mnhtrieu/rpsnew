@@ -22,7 +22,7 @@ class Header extends Component {
         <Menu borderless fixed={menuFixed && 'top'}>
           <Container text>
             <Menu.Item>
-              <Image size="mini" src="./assets/images/logo.png" />
+              <Image size="mini" src="/assets/images/logo.png" />
             </Menu.Item>
             <Link to="/" className="item header">
               RPSonline
@@ -37,7 +37,7 @@ class Header extends Component {
               Contact
             </Link>
             <Menu.Menu position="right">
-              <Link to="/game" className="item">
+              <Link to="/play" className="item">
                 <Icon name="chess pawn" /> Play
               </Link>
             </Menu.Menu>

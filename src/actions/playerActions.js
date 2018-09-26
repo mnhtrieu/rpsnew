@@ -1,5 +1,3 @@
-import {createStore} from 'redux';
-
 export function playerMessageLog(message) {
     // tady mas action creator, ktery ti dava nejaky typ akce a muze posilat i payload(data)
     // pokud bys ta data chtel nejak zpracovat, tak ja osobne bych to delal v action creatoru, v reduceru bych jen ukladal stav

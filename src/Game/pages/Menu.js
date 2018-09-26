@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import {Transition} from "semantic-ui-react";
+import {Transition, Button} from "semantic-ui-react";
+import {Redirect, Link} from 'react-router-dom';
 
 class Menu extends Component {
 
@@ -9,6 +10,7 @@ class Menu extends Component {
     }
     render() {
         const {visible} = this.state;
+        const {player} = this.props.game;
         return (
             <div>
                 <Transition visible={visible} animation="fly right">
@@ -18,21 +20,29 @@ class Menu extends Component {
                                 <div className="ui fluid card">
                                     <h2 className="card-header dark-color-bg white-color">RPS online</h2>
                                     <div className="content primary-color-bg">
-                                        <h3>Welcome, aaa</h3>
+                                        <h3>Welcome, {player.getName()}</h3>
+                                        <Button fluid>Host Game</Button><br />
+                                        <Button fluid>Join Game</Button><br />
+                                        <Link className="fluid ui button default" to="/game/login">Back</Link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </Transition>
-                {!visible && this.handleLoad()}
             </div>
         )
     }
 
-    handleLoad = () => {
-        this.setState({visible: !this.state.visible})
-    };
+    componentDidMount(){
+        this.setState({visible: !this.state.visible});
+    }
+
+    back = () => {
+        console.log("aa");
+        return (<Redirect to='/game/login'/>);
+    }
+
 
 }
 

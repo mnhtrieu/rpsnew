@@ -27,10 +27,10 @@ class Homepage extends Component {
                         those funny sounds the game produced.
                     </p>
                     <Image.Group size='small'>
-                        <Image src="./assets/images/menu.gif"/>
-                        <Image src="./assets/images/flag.gif"/>
-                        <Image src="./assets/images/sameweap.gif"/>
-                        <Image src="./assets/images/ICQGamesRPSMeldungWatingforOponent2.gif"/>
+                        <Image src="/assets/images/menu.gif"/>
+                        <Image src="/assets/images/flag.gif"/>
+                        <Image src="/assets/images/sameweap.gif"/>
+                        <Image src="/assets/images/ICQGamesRPSMeldungWatingforOponent2.gif"/>
                     </Image.Group>
 
                     <h3>How it all started?</h3>
@@ -55,10 +55,10 @@ class Homepage extends Component {
 
                     <p>If you are interested in the progress of the prototype, here are a few screens:</p>
                     <p>
-                        <a target="_blank" href="./assets/images/movement.gif">Movement prototype</a><br/>
-                        <a target="_blank" href="./assets/images/team.gif">Choosing a team and a timer</a><br/>
-                        <a target="_blank" href="./assets/images/gamestart.gif">Setting a game</a><br/>
-                        <a target="_blank" href="./assets/images/chat.gif">Game chat</a><br/>
+                        <a target="_blank" href="/assets/images/movement.gif">Movement prototype</a><br/>
+                        <a target="_blank" href="/assets/images/team.gif">Choosing a team and a timer</a><br/>
+                        <a target="_blank" href="/assets/images/gamestart.gif">Setting a game</a><br/>
+                        <a target="_blank" href="/assets/images/chat.gif">Game chat</a><br/>
 
                     </p>
                     <p>However, school started and I got busy with my bachelor's thesis and forgot about the project.
