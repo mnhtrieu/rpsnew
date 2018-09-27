@@ -6,11 +6,10 @@ class Menu extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {visible: false}
+        this.state = {visible: false, username: this.props.username}
     }
     render() {
-        const {visible} = this.state;
-        const {player} = this.props.game;
+        const {visible,username} = this.state;
         return (
             <div>
                 <Transition visible={visible} animation="fly right">
@@ -20,10 +19,10 @@ class Menu extends Component {
                                 <div className="ui fluid card">
                                     <h2 className="card-header dark-color-bg white-color">RPS online</h2>
                                     <div className="content primary-color-bg">
-                                        <h3>Welcome, {player.getName()}</h3>
+                                        <h3>Welcome, {username}</h3>
                                         <Button fluid>Host Game</Button><br />
                                         <Button fluid>Join Game</Button><br />
-                                        <Link className="fluid ui button default" to="/game/login">Back</Link>
+                                        <Link className="fluid ui button default" to="/play/login">Back</Link>
                                     </div>
                                 </div>
                             </div>

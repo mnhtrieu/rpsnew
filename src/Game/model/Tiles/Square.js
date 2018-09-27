@@ -1,19 +1,10 @@
-import React, {Component} from "react";
+import React from "react";
+import AbstractSquare from "./AbstractSquare";
 
-
-class Square extends Component {
+class Square extends AbstractSquare {
 
     constructor(props) {
         super(props);
-        var color = "";
-
-        const val = this.props.value;
-        if ((val+Math.floor((val/7)%1)) % 2 === 0) color = "even";
-        else color = "odd";
-
-        this.state = {
-            color: color,
-        }
     }
 
     render() {
@@ -22,7 +13,6 @@ class Square extends Component {
             <div className="column no-padding">
                 <div className={"square " + color}>
                     <div className="text">
-                        square #{this.props.value}
                     </div>
                 </div>
             </div>

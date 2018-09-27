@@ -14,3 +14,4 @@ export function playerDeleteMessage() {
 export function playerChangeUsername(username) {
     return {type: 'PLAYER_USERNAME', payload: username};
 }
+

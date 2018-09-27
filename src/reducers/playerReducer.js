@@ -7,7 +7,6 @@ export const initialState = {
 export default function (state = initialState, action) {
     switch (action.type) {
         case 'PLAYER_LOG': {
-            console.log('action:',action);
             return {...state, content: action.payload};
         }
         case 'PLAYER_DELETE_MESSAGE': {

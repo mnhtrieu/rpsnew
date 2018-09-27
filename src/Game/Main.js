@@ -15,30 +15,20 @@ import {playerChangeUsername} from "../actions/playerActions";
 class Main extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            board: null,
-            player: new Player(),
-            enemy: null,
-            timer: 10,
-            // TODO, nepamatuji si všechny potřebné věci :D kdyžtak časem se doplní
-        };
+        this.state = {username: ''};
     }
     render() {
         const nickname = this.props.nickname;
-        const player = this.state.player;
-
         /*if (player.getName() === null) {
             player.setName("");
             return (<Redirect to='/play/login'/>)
         }*/
-
-        player.setName(nickname);
         return (
             <div>
                 <Switch>
-                    <Route exact path="/play/login" render={()=> <Login game={this.state} />}/>
-                    <Route exact path="/play/menu" render={()=> <Menu game={this.state} />}/>
-                    <Route exact path="/play/game" render={()=> <Game game={this.state} />}/>
+                    <Route exact path="/play/login" render={()=> <Login username={nickname} />}/>
+                    <Route exact path="/play/menu" render={()=> <Menu username={nickname} />}/>
+                    <Route exact path="/play/game" render={()=> <Game username={nickname} />}/>
                 </Switch>
             </div>);
     }

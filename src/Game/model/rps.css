@@ -17,9 +17,8 @@
 
 .side-wrapper {
     background: #A1C828;
-    margin-top:5px;
     padding-bottom:20px;
-    height: 556px;
+    height: 100%;
     position: relative;
 }
 
@@ -85,10 +84,6 @@
     padding-bottom: 5px;
 }
 
-.col-nopad{
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-}
 .chat .send-message{
     position: absolute;
     width:98%;
@@ -97,11 +92,11 @@
 }
 
 .red {
-    background-image: url(../images/red.png);
+    /*background-image: url(../images/red.png);*/
 }
 
 .blue{
-    background-image: url(../images/blue.png);
+    /*background-image: url(../images/blue.png);*/
 }
 
 .player {
@@ -149,7 +144,7 @@
 .weap{
     position: absolute;
     width: 93px;
-    background: url(../images/figuresv2.png) no-repeat;
+    /*background: url(../images/figuresv2.png) no-repeat;*/
     background-size: cover;
     height: 93px;
     z-index: 501;
@@ -179,7 +174,7 @@
 .arrow{
     position: absolute;
     width: 93px;
-    background: url(../images/arrows.png) no-repeat;
+    /*background: url(../images/arrows.png) no-repeat;*/
     background-size: 200% auto;
     height: 93px;
     z-index: 501;
@@ -429,6 +424,10 @@ h1.waiting:before {
 .mb5{
     margin-bottom: 5px;
 }
+
+.mt20{
+    margin-top: 20px !important;
+}
 .reason{
     font-size: 11px;
 }
@@ -438,15 +437,45 @@ h1.waiting:before {
 .p15{
     font-size: 15pt;
 }
-/* Mobile */
+.pt0{
+    padding-top: 0 !important;
+}
 
-@media only screen and (max-width: 767px) {
-    [class*="mobile hidden"],
-    [class*="tablet only"]:not(.mobile),
-    [class*="computer only"]:not(.mobile),
-    [class*="large monitor only"]:not(.mobile),
-    [class*="widescreen monitor only"]:not(.mobile),
-    [class*="or lower hidden"] {
-        display: none !important;
-    }
+.square{
+    width: 100% !important;
+    padding-top: 100% !important;
+    position: relative !important;
+}
+
+.square.even{
+    background-color: #c7df7f;
+}
+.square.odd{
+    background-color: #a1c828;
+
+}
+.no-padding{
+    padding: 0 !important;
+    position: relative;
+    width: 30%;
+}
+
+.square > .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.game-grid{
+    margin-right: 0px !important;
+}
+.ui.action.input:not([class*="left action"])>input:focus{
+
+    border-right-color: transparent !important;
+}
+.ui.input.focus>input, .ui.input>input:focus{
+    border: 1px solid rgba(34,36,38,.15) !important;
+    border-right-color: inherit !important;
 }

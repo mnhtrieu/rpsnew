@@ -7,7 +7,11 @@ import {playerChangeUsername} from "../../actions/playerActions";
 
 class Login extends Component {
 
-    state = {visible: true, redirect: false};
+    constructor(props){
+        super(props);
+        this.state = {visible: true, redirect: false,username: this.props.username};
+    }
+
 
     toggleVisibility = () => this.setState({visible: !this.state.visible});
 
@@ -26,15 +30,14 @@ class Login extends Component {
     }
 
     render() {
-        const {visible} = this.state;
-        const {player} = this.props.game;
+        const {visible,username} = this.state;
         return (
             <div>
             <Transition visible={visible} animation="fly left"
                         onComplete={() => (this.onCompleteTransition())}>
                 <div className="page-login">
                     <div className="ui centered grid container">
-                        <LoginForm onSubmit={this.submit} initialValues={{username: player.getName()}} />
+                        <LoginForm onSubmit={this.submit} initialValues={{username: username}} />
                     </div>
                 </div>
 

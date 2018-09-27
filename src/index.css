@@ -119,33 +119,15 @@ a.header.item:hover {
 }
 
 
-.square{
-    width: 100% !important;
-    padding-top: 100% !important;
-    position: relative !important;
-}
+/* Mobile */
 
-.square.even{
-    background-color: #c7df7f;
-}
-.square.odd{
-    background-color: #a1c828;
-
-}
-.no-padding{
-    padding: 0 !important;
-    position: relative;
-    width: 30%;
-}
-
-.square > .text {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
-.mt20{
-    margin-top: 20px !important;
+@media only screen and (max-width: 767px) {
+    [class*="mobile hidden"],
+    [class*="tablet only"]:not(.mobile),
+    [class*="computer only"]:not(.mobile),
+    [class*="large monitor only"]:not(.mobile),
+    [class*="widescreen monitor only"]:not(.mobile),
+    [class*="or lower hidden"] {
+        display: none !important;
+    }
 }
