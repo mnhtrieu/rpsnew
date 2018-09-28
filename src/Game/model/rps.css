@@ -132,23 +132,7 @@
     opacity: 1;
 }
 
-.enemy {
-    position: absolute;
-    width: 93px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 93px;
-    z-index: 500;
-}
 
-.weap{
-    position: absolute;
-    width: 93px;
-    /*background: url(../images/figuresv2.png) no-repeat;*/
-    background-size: cover;
-    height: 93px;
-    z-index: 501;
-}
 .undefined-bl,.undefined-rd{
     opacity: 0;
 }
@@ -460,7 +444,7 @@ h1.waiting:before {
     width: 30%;
 }
 
-.square > .text {
+.square > .square-content {
     position: absolute;
     top: 0;
     left: 0;
@@ -478,4 +462,13 @@ h1.waiting:before {
 .ui.input.focus>input, .ui.input>input:focus{
     border: 1px solid rgba(34,36,38,.15) !important;
     border-right-color: inherit !important;
+}
+
+.square > .square-content > img{
+    position:absolute;
+    z-index: 5;
+}
+
+.square:hover > div:not(.enemy) > img:not(.trap){
+    cursor:pointer;
 }

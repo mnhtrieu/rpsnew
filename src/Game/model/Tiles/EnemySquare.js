@@ -4,13 +4,12 @@ import {Image} from "semantic-ui-react"
 
 class EnemySquare extends AbstractSquare {
 
-    constructor(props) {
-        super(props);
-    }
 
-    render() {
+    renderSquare() {
         return (
-            <Image src="/assets/images/red_front.png" fluid />
+            <div className="square-content enemy">
+                <Image src="/assets/images/red_front.png" fluid/>
+            </div>
 
         )
     }

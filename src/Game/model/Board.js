@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 import Square from "./Tiles/Square"
-import SquareWrapper from "./Tiles/SquareWrapper"
 import PlayerSquare from "./Tiles/PlayerSquare"
 import EnemySquare from "./Tiles/EnemySquare"
 
@@ -24,7 +23,7 @@ class Board extends Component {
                 let idx = i * 7 + j;
                 if ((idx + Math.floor((idx / 7) % 1)) % 2 === 0) color = "even";
                 else color = "odd";
-                this.state.tiles[idx] = <SquareWrapper key={idx} square={<Square key={idx}/>} color={color}/>;
+                this.state.tiles[idx] = <Square key={idx}  id={idx}/>;
             }
         }
     }
@@ -35,17 +34,14 @@ class Board extends Component {
             let color = "";
             if ((i + Math.floor((i / 7) % 1)) % 2 === 0) color = "even";
             else color = "odd";
-            tiles[i] = <SquareWrapper key={i} square={<EnemySquare key={i}/>} color={color}/>
+            tiles[i] = <EnemySquare key={i}  id={i}/>
         }
     }
 
     constructPlayers = () => {
         const tiles = this.state.tiles;
         for(let i = 28; i < 42; i++){
-            let color = "";
-            if ((i + Math.floor((i / 7) % 1)) % 2 === 0) color = "even";
-            else color = "odd";
-            tiles[i] = <SquareWrapper key={i} square={<PlayerSquare key={i}/>} color={color}/>
+            tiles[i] = <PlayerSquare key={i} id={i}/>
         }
     }
 
